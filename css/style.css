@@ -33,7 +33,7 @@ h1 {                            /* Propiedades del título */
     color: var(--color-titulo);
 }
 
-h2 {                            /* Propiedades del subtítulo */
+h2 {                            /* Propiedades del encabezado */
     margin-left: 0.625em;
     color: var(--color-subtitulo);
     font-family: "Lucida Grande";
@@ -41,33 +41,38 @@ h2 {                            /* Propiedades del subtítulo */
     text-align: center;
 }
 
-h3 {
+h3 {                            /* Propiedades del subtítulo */
     font-family: "Lucida Grande";
     color: var(--color-resaltado);
     margin-left: 0.625em;
 }
 
-#menu-flotante {
-    position: fixed;
+h4 {                            /* Propiedades del texto destacado */
+    font-family: "Lucida Grande";
+    color: var(--color-resaltado);
+    margin-left: 0.625em;
+}
+
+#menu-flotante {                /* Propiedades del menú flotante */
+    position: fixed;            /* Mantiene el menú fijo en la pantalla */
     top: 0;
     left: 0;
     width: 100%;
     background: var(--color-resaltado);
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    z-index: 9999;
+    z-index: 9999;              /* Mantiene el menú siempre encima de los demás elementos */
     padding: 0.5em;
     display: flex;
     justify-content: center;
     gap: 2em;
-    list-style: none;
 }
 
 .menu-flotante-elemento {
-    list-style: none;
+    list-style: none;           /* Elimina las viñetas de la lista del menú */
 }
 
 .menu-flotante-elemento a {
-    text-decoration: none;
+    text-decoration: none;      /* Elimina el subrayado de los enlaces */
     color: white;
     font-weight: bold;
     transition: color 0.2s;
@@ -79,12 +84,6 @@ h3 {
 
 article h3 {
     margin-bottom: 0.625em;
-}
-
-h4 {
-    font-family: "Lucida Grande";
-    color: var(--color-resaltado);
-    margin-left: 0.625em;
 }
 
 #lema {
@@ -104,7 +103,7 @@ h4 {
     color: #a0522d;
 }
 
-#container-destacados {
+#container-destacados {         /* Propiedades de la parrilla con las tarjetas de los platos destacados */
     margin: 1.25em;
     display: grid;
     grid-template-columns: repeat(4, 1fr);  /* 4 columnas iguales */
@@ -112,16 +111,7 @@ h4 {
     margin-bottom: 3.125em;
 }
 
-/* #container-destacados-inferior {
-    margin: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: row;
-    gap: 1.25em;
-} */
-
-.platos-destacados-ventanas {
+.platos-destacados-ventanas {   /* Propiedades de cada tarjeta de platos destacados */
     display: flex;
     justify-content: stretch;
     flex-direction: column;
@@ -130,28 +120,28 @@ h4 {
     background-color: #fff8dc;
     padding: 0.625em;
     flex: 1;
-    height: 95%;  /* altura fija */
-    width: 85%;   /* ancho completo de la columna */
+    height: 95%;  
+    width: 85%;   
 }
 
-.imagen-plato-destacado {
+.imagen-plato-destacado {   /* Propiedades de las imágenes de las tarjetas de platos destacados */
     width: 100%;
     height: auto;
     margin-bottom: 0.3125em;
 }
 
-.destacados-texto {
+.destacados-texto {         /* Propiedades de la extensión del texto de las tarjetas de platos destacados */
     width: 100%;
 }
 
-.nombre-plato-destacado {
+.nombre-plato-destacado {   /* Propiedades de los nombres de los platos de las tarjetas de platos destacados */
     font-family: "Lucida Grande";
     margin-bottom: 0.3125em;
     color: var(--color-resaltado);
     margin-left: 0px;
 }
 
-.descripcion-plato-destacado {
+.descripcion-plato-destacado { /* Propiedades de la descripción de las tarjetas de platos destacados */
     text-align: justify;
     margin-left: 0;
     margin-bottom: 0;
@@ -161,7 +151,7 @@ main {
     margin-bottom: 1.25em;
 }
 
-.bloque-menu {
+.bloque-menu {                  /* Propiedades de cada hilera de platos del menú del día */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -172,7 +162,7 @@ main {
     text-align: justify;
 }
 
-.imagenes-menu {
+.imagenes-menu {                /* Propiedades de las imágenes de final de línea del menú del día */
     margin-left: 0.875em;
     margin-right: 0.625em;
     margin-bottom: 0.625em;
@@ -180,14 +170,14 @@ main {
 }
 
 #reserva,
-#mas-resenas {
+#mas-resenas {                  /* Propiedades de los formularios para los botones */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #reserva-boton,
-#mas-resenas-boton {
+#mas-resenas-boton {          /* Propiedades de los botones */
     display: flex;
     justify-content: center;
     border: 2px solid var(--color-subtitulo);
@@ -197,33 +187,33 @@ main {
 }
 
 #reserva-boton:hover,
-#mas-resenas-boton:hover {
+#mas-resenas-boton:hover {  /* Propiedades de los botones al posar el cursor en ellos */
     border: 2px solid black;
     background-color: #b22222;
     color: white;
 }
 
-.sobre-nosotros-bloque {
+.sobre-nosotros-bloque {    /* Propiedades de un bloque de párrafo con imagen de la sección "Sobre Nosotros" */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.sobre-nosotros-bloque img {
+.sobre-nosotros-bloque img { /* Propiedades de una imagen de la sección "Sobre Nosotros" */
     width: 31.25em;
     margin: 0.625em;
     border: 3px solid var(--color-subtitulo);
 }
 
-.sobre-nosotros-bloque p { 
+.sobre-nosotros-bloque p { /* Propiedades de un párrafo de la sección "Sobre Nosotros" */
     width: 70%;
     margin: 0.625em;
     font-size: 1.1875em;
     text-align: justify;
 }
 
-.resena-bloque {
+.resena-bloque {           /* Propiedades de una tarjeta de reseña */
     border: 2px solid var(--color-subtitulo);
     border-radius: 0.3125em;
     padding: 0.625em;
@@ -232,11 +222,11 @@ main {
     width: 50%;
 }
 
-.resena-bloque img {
+.resena-bloque img {       /* Propiedades de una estrella en un bloque de reseña */
     width: 1.5625em;
 }
 
-#resenas > div {
+#resenas > div {           /* Propiedades de una hilera de reseñas */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -257,7 +247,7 @@ footer {
     background-color: #fff8dc;
 }
 
-#contacto-form {
+#contacto-form {        /* Propiedades del bloque con los medios de contacto */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -265,18 +255,24 @@ footer {
     margin: 0.625em;
 }
 
-#iframe_horario {
+footer iframe {        /* Propiedades del iFrame con Google Maps */
+    margin-left: 0.625em;
+    width: 50%;
+    height: 20em;
+}
+
+#iframe_horario {      /* Propiedades del bloque que contiene el iFrame y el horario de contacto */
     display: flex;
     flex-direction: row;
 }
 
-.tooltip-container {
+.tooltip-container {   /* Propiedades de cada imagen de medio de contacto con su tooltip */
 position: relative;
 display: inline-block;
 margin: 0.625em;
 }
 
-.tooltip-text {
+.tooltip-text {        /* Propiedades del texto del tooltip de cada medio de contacto */
 visibility: hidden;
 width: 8.125em;
 background-color: #222;
@@ -286,7 +282,7 @@ border-radius: 0.375em;
 padding: 0.375em 0;
 position: absolute;
 z-index: 1;
-bottom: 120%;    /* Por encima de la imagen */
+bottom: 120%;
 left: 50%;
 transform: translateX(-50%);
 opacity: 0;
@@ -294,26 +290,19 @@ transition: opacity 0.3s;
 pointer-events: none;
 }
 
-.tooltip-container:hover .tooltip-text {
+.tooltip-container:hover .tooltip-text { /* Propiedades de la visibilidad del tootltip al posar el cursor encima */
 visibility: visible;
 opacity: 1;
 }
 
-.tooltip-container img {
+.tooltip-container img { /* Propiedades de las imágenes con tooltip */
     width: 3.125em;
 }
 
-
-#copy {
+#copy {              /* Propiedades del banner del footer con los derechos de la página */
     background-color: #b22222;
     color: white;
     text-align: center;
     margin-left: 0;
     margin-top: 0.625em;
-}
-
-footer iframe {
-    margin-left: 0.625em;
-    width: 50%;
-    height: 20em;
 }

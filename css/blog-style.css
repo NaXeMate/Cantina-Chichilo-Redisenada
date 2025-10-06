@@ -1,0 +1,258 @@
+:root {                         /* Declaración de variables para los colores */
+    --color-titulo: #b22222;
+    --color-subtitulo: #cd5c5c;
+    --color-resaltado: #ca6161;
+}
+
+* {                             /* Reseteador + fuente predeterminada */
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {                        /* Posicionamiento del menú flotante */
+    padding: 0.625em;
+    margin-bottom: 1.25em;
+    position: sticky;
+}
+
+h1 {                            /* Propiedades del título */
+    text-align: center;
+    font-weight: bold;
+    font-family: "Lucida Grande";
+    font-size: 3.125em;
+    color: var(--color-titulo);
+}
+
+h2 {                            /* Propiedades del encabezado */
+    margin-left: 0.625em;
+    color: var(--color-subtitulo);
+    font-family: "Lucida Grande";
+    font-size: 2em;
+    text-align: center;
+}
+
+h3 {                            /* Propiedades del subtítulo */
+    font-family: "Lucida Grande";
+    color: var(--color-resaltado);
+    margin-left: 0.625em;
+}
+
+#menu-flotante {                /* Propiedades del menú flotante */
+    position: fixed;            /* Mantiene el menú fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-resaltado);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 9999;              /* Mantiene el menú siempre encima de los demás elementos */
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.menu-flotante-elemento {
+    list-style: none;           /* Elimina las viñetas de la lista del menú */
+}
+
+.menu-flotante-elemento a {
+    text-decoration: none;      /* Elimina el subrayado de los enlaces */
+    color: white;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.menu-flotante-elemento a:hover {
+    color: #b22222;
+}
+
+h1 {                            /* Propiedades del título */
+    text-align: center;
+    font-weight: bold;
+    font-family: "Lucida Grande";
+    font-size: 3.125em;
+    color: var(--color-titulo);
+}
+
+h2 {                            /* Propiedades del encabezado */
+    margin-left: 0.625em;
+    color: var(--color-subtitulo);
+    font-family: "Lucida Grande";
+    font-size: 2em;
+    text-align: center;
+}
+
+h3 {                            /* Propiedades del subtítulo */
+    font-family: "Lucida Grande";
+    color: var(--color-resaltado);
+    margin-left: 0.625em;
+}
+
+h4 {                            /* Propiedades del texto destacado */
+    font-family: "Lucida Grande";
+    color: var(--color-resaltado);
+    margin-left: 0.625em;
+}
+
+#lema {
+    text-align: center;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    color: var(--color-subtitulo);
+    margin-bottom: 1em;
+}
+
+p {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: #fffbdc;
+}
+
+main {
+    margin-bottom: 1.25em;
+}
+
+hr {
+    border: 5px solid #cd5c5c;
+    margin: 10px 0;
+}
+
+.parent {           /* Propiedades del bloque que incluye los artículos del blog */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+/* Propiedades de cada una de las tarjetas con artículos del blog */
+.div1 { 
+    grid-area: 1 / 1 / 3 / 2; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div2 { 
+    grid-area: 1 / 2 / 3 / 3; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div3 { 
+    grid-area: 1 / 3 / 3 / 4; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div4 { 
+    grid-area: 1 / 4 / 3 / 5; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div5 { 
+    grid-area: 3 / 1 / 5 / 2; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div6 { 
+    grid-area: 3 / 2 / 5 / 3; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div7 { 
+    grid-area: 3 / 3 / 5 / 4; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div8 { 
+    grid-area: 3 / 4 / 5 / 5; 
+    border: 3px solid #cd5c5c; 
+    border-radius: 5px;
+}
+
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 { /* Propiedades de todas las tarjetas de arctículos del blog */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div1 img, .div2 img, .div7 img, .div8 img { /* Propiedades de las imágenes de las tarjetas del blog */
+    width: 50%;
+    height: auto;
+    margin: 1em;
+}
+
+footer {
+    background-color: #fff8dc;
+}
+
+#contacto-form {        /* Propiedades del bloque con los medios de contacto */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0.625em;
+}
+
+footer iframe {        /* Propiedades del iFrame con Google Maps */
+    margin-left: 0.625em;
+    width: 50%;
+    height: 20em;
+}
+
+#iframe_horario {      /* Propiedades del bloque que contiene el iFrame y el horario de contacto */
+    display: flex;
+    flex-direction: row;
+}
+
+.tooltip-container {   /* Propiedades de cada imagen de medio de contacto con su tooltip */
+position: relative;
+display: inline-block;
+margin: 0.625em;
+}
+
+.tooltip-text {        /* Propiedades del texto del tooltip de cada medio de contacto */
+visibility: hidden;
+width: 8.125em;
+background-color: #222;
+color: #fff;
+text-align: center;
+border-radius: 0.375em;
+padding: 0.375em 0;
+position: absolute;
+z-index: 1;
+bottom: 120%;
+left: 50%;
+transform: translateX(-50%);
+opacity: 0;
+transition: opacity 0.3s;
+pointer-events: none;
+}
+
+.tooltip-container:hover .tooltip-text { /* Propiedades de la visibilidad del tootltip al posar el cursor encima */
+visibility: visible;
+opacity: 1;
+}
+
+.tooltip-container img { /* Propiedades de las imágenes con tooltip */
+    width: 3.125em;
+}
+
+#copy {              /* Propiedades del banner del footer con los derechos de la página */
+    background-color: #b22222;
+    color: white;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 0.625em;
+}
