@@ -10,6 +10,14 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.menu-lateral-container {
+    display: none;
+}
+
+#burguer { 
+    display: none;              /* El menú hamburguesa solo se verá cuando se active la media-query */
+}
+
 body {
     background-color: #fffbdc;
 }
@@ -28,7 +36,7 @@ header {                        /* Posicionamiento del menú flotante */
 h1 {                            /* Propiedades del título */
     text-align: center;
     font-weight: bold;
-    font-family: "Lucida Grande";
+    font-family: "Lucida Grande", "Calibri";
     font-size: 3.125em;
     color: var(--color-titulo);
 }
@@ -36,19 +44,19 @@ h1 {                            /* Propiedades del título */
 h2 {                            /* Propiedades del encabezado */
     margin-left: 0.625em;
     color: var(--color-subtitulo);
-    font-family: "Lucida Grande";
+    font-family: "Lucida Grande", "Calibri";
     font-size: 2em;
     text-align: center;
 }
 
 h3 {                            /* Propiedades del subtítulo */
-    font-family: "Lucida Grande";
+    font-family: "Lucida Grande", "Calibri";
     color: var(--color-resaltado);
     margin-left: 0.625em;
 }
 
 h4 {                            /* Propiedades del texto destacado */
-    font-family: "Lucida Grande";
+    font-family: "Lucida Grande", "Calibri";
     color: var(--color-resaltado);
     margin-left: 0.625em;
 }
@@ -79,7 +87,7 @@ h4 {                            /* Propiedades del texto destacado */
 }
 
 .menu-flotante-elemento a:hover {
-    color: #b22222;
+    color: #fffbdc;
 }
 
 article h3 {
@@ -230,7 +238,6 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
 
 #resenas,
@@ -243,7 +250,7 @@ hr {
     margin: 0.625em 0;
 }
 
-footer {
+#contacto {
     background-color: #fff8dc;
 }
 
@@ -267,32 +274,32 @@ footer iframe {        /* Propiedades del iFrame con Google Maps */
 }
 
 .tooltip-container {   /* Propiedades de cada imagen de medio de contacto con su tooltip */
-position: relative;
-display: inline-block;
-margin: 0.625em;
+    position: relative;
+    display: inline-block;
+    margin: 0.625em;
 }
 
 .tooltip-text {        /* Propiedades del texto del tooltip de cada medio de contacto */
-visibility: hidden;
-width: 8.125em;
-background-color: #222;
-color: #fff;
-text-align: center;
-border-radius: 0.375em;
-padding: 0.375em 0;
-position: absolute;
-z-index: 1;
-bottom: 120%;
-left: 50%;
-transform: translateX(-50%);
-opacity: 0;
-transition: opacity 0.3s;
-pointer-events: none;
+    visibility: hidden;
+    width: 8.125em;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.375em;
+    padding: 0.375em 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
 }
 
 .tooltip-container:hover .tooltip-text { /* Propiedades de la visibilidad del tootltip al posar el cursor encima */
-visibility: visible;
-opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 .tooltip-container img { /* Propiedades de las imágenes con tooltip */
@@ -305,4 +312,180 @@ opacity: 1;
     text-align: center;
     margin-left: 0;
     margin-top: 0.625em;
+}
+
+/* Media query para pantallas ≤ 600px */
+@media (max-width: 600px) {
+
+    #menu-flotante { 
+        display: none;
+    }
+
+    .menu-flotante-wrap {
+        position: fixed;            /* Mantiene el menú fijo en la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3.6em;
+        background-color: var(--color-resaltado);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        z-index: 10000;              /* Mantiene el menú siempre encima de los demás elementos */
+        padding: 0.5em;
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    /* Mostrar el botón hamburguesa */
+    #burguer {
+        display: block;
+        position: fixed;
+        top: 0.5em;
+        left: 0.5em;
+        z-index: 10000;
+        width: 64px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .menu-lateral-container {
+        display: block;
+        position: fixed;
+        top: 20px;
+        z-index: 100;
+    }
+
+    /* Menú lateral oculto y luego visible al activar */
+    .menu-lateral {
+        position: sticky;
+        margin-top: 1.5em;
+        left: -250px;
+        width: 250px;
+        height: 31vh;
+        background-color: var(--color-resaltado);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        padding-top: 3em;
+        transition: left 0.3s ease;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        list-style: none;
+    }
+
+    /* Mostrar menú cuando está activo */
+    .menu-lateral.activo {
+        left: 0;
+    }
+
+    .activo {
+        display: none;
+    }
+
+    /* Estilo enlaces en menú lateral */
+    .menu-lateral-elemento a {
+        color: white;
+        font-weight: bold;
+        padding: 0.5em 1em;
+        transition: color 0.2s;
+        text-decoration: none;
+    }
+
+    .menu-lateral-elemento a:hover {
+        color: #fffbdc;
+    }
+
+    h1 {
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    #container-destacados {         /* Propiedades de la parrilla con las tarjetas de los platos destacados */
+    margin: 1.25em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 columnas iguales */
+    gap: 1.25em;
+    margin-bottom: 3.125em;
+}
+
+    .platos-destacados-ventanas {   /* Propiedades de cada tarjeta de platos destacados */
+        display: flex;
+        justify-content: stretch;
+        flex-direction: column;
+        border: 2px solid var(--color-subtitulo);
+        border-radius: 0.3125em;
+        background-color: #fff8dc;
+        padding: 0.625em;
+        flex: 1;
+        height: 95%;  
+        width: 85%;   
+    }
+
+    .imagen-plato-destacado {   /* Propiedades de las imágenes de las tarjetas de platos destacados */
+        width: 100%;
+        height: auto;
+        margin-bottom: 0.3125em;
+    }
+
+    .destacados-texto {         /* Propiedades de la extensión del texto de las tarjetas de platos destacados */
+        width: 100%;
+    }
+
+    .nombre-plato-destacado {   /* Propiedades de los nombres de los platos de las tarjetas de platos destacados */
+        font-family: "Lucida Grande";
+        margin-bottom: 0.3125em;
+        color: var(--color-resaltado);
+        margin-left: 0px;
+    }
+
+    .descripcion-plato-destacado { /* Propiedades de la descripción de las tarjetas de platos destacados */
+        text-align: justify;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .sobre-nosotros-bloque {    /* Propiedades de un bloque de párrafo con imagen de la sección "Sobre Nosotros" */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sobre-nosotros-bloque img { /* Propiedades de una imagen de la sección "Sobre Nosotros" */
+        width: 15em;
+        margin: 0.625em;
+        border: 3px solid var(--color-subtitulo);
+    }
+
+    .sobre-nosotros-bloque p { /* Propiedades de un párrafo de la sección "Sobre Nosotros" */
+        width: 70%;
+        margin: 0.625em;
+        font-size: 1.1875em;
+        text-align: justify;
+    }
+
+    #resenas > div {           /* Propiedades de una hilera de reseñas */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #iframe_horario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #iframe_horario iframe {
+        margin-left: 0.625em;
+        width: 80%;
+        height: 20em;
+        margin-bottom: 1em;
+    }
+}
+
+@media (max-width: 440px) {
+    .imagenes-menu {
+        display: none;
+    }
 }

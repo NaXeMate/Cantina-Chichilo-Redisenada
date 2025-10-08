@@ -16,24 +16,39 @@ header {                        /* Posicionamiento del menú flotante */
     position: sticky;
 }
 
+.menu-lateral-container {
+    display: none;
+}
+
+#burguer { 
+    display: none;              /* El menú hamburguesa solo se verá cuando se active la media-query */
+}
+
 h1 {                            /* Propiedades del título */
     text-align: center;
     font-weight: bold;
-    font-family: "Lucida Grande";
+    font-family: "Lucida Grande", "Calibri";
     font-size: 3.125em;
     color: var(--color-titulo);
+    margin-bottom: 0.5em;
 }
 
 h2 {                            /* Propiedades del encabezado */
     margin-left: 0.625em;
     color: var(--color-subtitulo);
-    font-family: "Lucida Grande";
+    font-family: "Lucida Grande", "Calibri";
     font-size: 2em;
     text-align: center;
 }
 
 h3 {                            /* Propiedades del subtítulo */
-    font-family: "Lucida Grande";
+    font-family: "Lucida Grande", "Calibri";
+    color: var(--color-resaltado);
+    margin-left: 0.625em;
+}
+
+h4 {                            /* Propiedades del texto destacado */
+    font-family: "Lucida Grande", "Calibri";
     color: var(--color-resaltado);
     margin-left: 0.625em;
 }
@@ -65,34 +80,6 @@ h3 {                            /* Propiedades del subtítulo */
 
 .menu-flotante-elemento a:hover {
     color: #b22222;
-}
-
-h1 {                            /* Propiedades del título */
-    text-align: center;
-    font-weight: bold;
-    font-family: "Lucida Grande";
-    font-size: 3.125em;
-    color: var(--color-titulo);
-}
-
-h2 {                            /* Propiedades del encabezado */
-    margin-left: 0.625em;
-    color: var(--color-subtitulo);
-    font-family: "Lucida Grande";
-    font-size: 2em;
-    text-align: center;
-}
-
-h3 {                            /* Propiedades del subtítulo */
-    font-family: "Lucida Grande";
-    color: var(--color-resaltado);
-    margin-left: 0.625em;
-}
-
-h4 {                            /* Propiedades del texto destacado */
-    font-family: "Lucida Grande";
-    color: var(--color-resaltado);
-    margin-left: 0.625em;
 }
 
 #lema {
@@ -217,32 +204,32 @@ footer iframe {        /* Propiedades del iFrame con Google Maps */
 }
 
 .tooltip-container {   /* Propiedades de cada imagen de medio de contacto con su tooltip */
-position: relative;
-display: inline-block;
-margin: 0.625em;
+    position: relative;
+    display: inline-block;
+    margin: 0.625em;
 }
 
 .tooltip-text {        /* Propiedades del texto del tooltip de cada medio de contacto */
-visibility: hidden;
-width: 8.125em;
-background-color: #222;
-color: #fff;
-text-align: center;
-border-radius: 0.375em;
-padding: 0.375em 0;
-position: absolute;
-z-index: 1;
-bottom: 120%;
-left: 50%;
-transform: translateX(-50%);
-opacity: 0;
-transition: opacity 0.3s;
-pointer-events: none;
+    visibility: hidden;
+    width: 8.125em;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.375em;
+    padding: 0.375em 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
 }
 
 .tooltip-container:hover .tooltip-text { /* Propiedades de la visibilidad del tootltip al posar el cursor encima */
-visibility: visible;
-opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 .tooltip-container img { /* Propiedades de las imágenes con tooltip */
@@ -255,4 +242,182 @@ opacity: 1;
     text-align: center;
     margin-left: 0;
     margin-top: 0.625em;
+}
+
+/* Media query para pantallas ≤ 600px */
+@media (max-width: 600px) {
+
+    #menu-flotante { 
+        display: none;
+    }
+
+    .menu-flotante-wrap {
+        position: fixed;            /* Mantiene el menú fijo en la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3.6em;
+        background-color: var(--color-resaltado);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        z-index: 10000;              /* Mantiene el menú siempre encima de los demás elementos */
+        padding: 0.5em;
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    /* Mostrar el botón hamburguesa */
+    #burguer {
+        display: block;
+        position: fixed;
+        top: 0.5em;
+        left: 0.5em;
+        z-index: 10000;
+        width: 64px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .menu-lateral-container {
+        display: block;
+        position: fixed;
+        top: 20px;
+        z-index: 100;
+    }
+
+    /* Menú lateral oculto y luego visible al activar */
+    .menu-lateral {
+        position: sticky;
+        margin-top: 1.5em;
+        left: -250px;
+        width: 250px;
+        height: 31vh;
+        background-color: var(--color-resaltado);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        padding-top: 3em;
+        transition: left 0.3s ease;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        list-style: none;
+    }
+
+    /* Mostrar menú cuando está activo */
+    .menu-lateral.activo {
+        left: 0;
+    }
+
+    .activo {
+        display: none;
+    }
+
+    /* Estilo enlaces en menú lateral */
+    .menu-lateral-elemento a {
+        color: white;
+        font-weight: bold;
+        padding: 0.5em 1em;
+        transition: color 0.2s;
+        text-decoration: none;
+    }
+
+    .menu-lateral-elemento a:hover {
+        color: #fffbdc;
+    }
+
+    h1 {
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .parent {           /* Propiedades del bloque que incluye los artículos del blog */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1.25em;
+        gap: 1.25em;
+        margin-bottom: 3.125em;
+    }
+
+    /* Propiedades de cada una de las tarjetas con artículos del blog */
+    .div1 { 
+        grid-column: 1;
+        grid-row: 1;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+
+    .div2 { 
+        grid-column: 2;
+        grid-row: 1;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+
+    .div3 { 
+        grid-column: 1;
+        grid-row: 2;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+
+    .div4 { 
+        grid-column: 2;
+        grid-row: 2;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+
+    .div5 { 
+        grid-column: 1;
+        grid-row: 3;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+
+    .div6 { 
+        grid-column: 2;
+        grid-row: 3;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+
+    .div7 { 
+        grid-column: 1;
+        grid-row: 4;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+
+    .div8 { 
+        grid-column: 2;
+        grid-row: 4;
+        border: 3px solid #cd5c5c; 
+        border-radius: 5px;
+    }
+
+/* Propiedades de cada una de las tarjetas con artículos del blog */
+    article > div {
+        border: 3px solid #cd5c5c;
+        border-radius: 5px;
+    }
+
+    #iframe_horario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #iframe_horario iframe {
+        margin-left: 0.625em;
+        width: 80%;
+        height: 20em;
+        margin-bottom: 1em;
+    }
 }

@@ -2,8 +2,9 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cantina Chichilo de Buenos Aires</title>
-        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body>
@@ -18,6 +19,23 @@
                     <li class="menu-flotante-elemento"><a href="blog.html">BLOG</a></li>
                 </ul>
             </nav>
+
+            <div class="menu-flotante-wrap">
+                <div id="burguer-container" onclick="toggleMenu()">
+                    <img id="burguer" src="../img/burguer.png" alt="burguer">
+                </div>
+            </div>
+
+            <nav class="menu-lateral-container">
+                <ul class="menu-lateral">
+                    <li class="menu-lateral-elemento"><a href="#platos-destacados">PLATOS DESTACADOS</a></li>
+                    <li class="menu-lateral-elemento"><a href="#menu-dia">MENÚ DEL DÍA</a></li>
+                    <li class="menu-lateral-elemento"><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                    <li class="menu-lateral-elemento"><a href="#resenas">RESEÑAS</a></li>
+                    <li class="menu-lateral-elemento"><a href="#contacto">CONTACTO</a></li>
+                    <li class="menu-lateral-elemento"><a href="blog.html">BLOG</a></li>
+                </ul>
+            </nav>
         </header>
         
         <main>
@@ -27,11 +45,13 @@
         </main>
 
         <section>
+
+            
             <h2 id="platos-destacados">Platos destacados</h2>
 
             <article id="container-destacados">
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/copa_guadalupe.png" alt="Copa Guadalupe"/>
+                    <img class="imagen-plato-destacado" src="../img/copa_guadalupe.png" alt="Copa Guadalupe">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Copa Guadalupe</h3>
                         <p class="descripcion-plato-destacado">Delicioso postre servido en copa, que combina fresas frescas, abundante nata montada, trozos de merengue y un toque de salsa de caramelo.</p>
@@ -39,7 +59,7 @@
                 </div>
 
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/fruta_crema.png" alt="Fruta con crema"/>
+                    <img class="imagen-plato-destacado" src="../img/fruta_crema.png" alt="Fruta con crema">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Fruta con crema</h3>
                         <p class="descripcion-plato-destacado">Clásico postre servido en copa que combina fresas cortadas y generosa nata montada, perfecto para los amantes de los sabores sencillos y auténticos.</p>
@@ -47,7 +67,7 @@
                 </div>
 
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/quinotos.png" alt="Quinotos al Rhun con helado"/>
+                    <img class="imagen-plato-destacado" src="../img/quinotos.png" alt="Quinotos al Rhun con helado">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Quinotos al Rhun con helado</h3>
                         <p class="descripcion-plato-destacado">Postre tradicional que combina quinotos en almíbar macerados en ron con una bola de cremoso helado de vainilla americana.</p>
@@ -55,7 +75,7 @@
                 </div>
 
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/mondongo_italiana.png" alt="Mondongo a la italiana"/>
+                    <img class="imagen-plato-destacado" src="../img/mondongo_italiana.png" alt="Mondongo a la italiana">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Mondongo a la italiana</h3>
                         <p class="descripcion-plato-destacado">Guiso elaborado con callos de ternera, cocidos en salsa de tomate, verduras y especias para lograr un plato lleno de sabor mediterráneo.</p>
@@ -63,7 +83,7 @@
                 </div>
             
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/rinones_vino.png" alt="Riñones al vino blanco"/>
+                    <img class="imagen-plato-destacado" src="../img/rinones_vino.png" alt="Riñones al vino blanco">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Riñones al vino blanco</h3>
                         <p class="descripcion-plato-destacado">Riñones de ternera salteados y cocinados en una delicada salsa de vino blanco, con cebolla y hierbas aromáticas, logrando una combinación suave y llena de sabor.</p>
@@ -71,7 +91,7 @@
                 </div>
 
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/calamarettis_escarpetta.png" alt="Calamarettis a la Escarpetta"/>
+                    <img class="imagen-plato-destacado" src="../img/calamarettis_escarpetta.png" alt="Calamarettis a la Escarpetta">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Calamarettis a la Escarpetta</h3>
                         <p class="descripcion-plato-destacado">Un plato de calamares guisados en una salsa de tomate aromatizada con ajo, perejil y un toque de vino blanco. Para disfrutar hasta la última gota de su sabor.</p>
@@ -79,7 +99,7 @@
                 </div>
 
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/tallarines_verdeo.png" alt="Tallarines al Verdeo con Longaniza"/>
+                    <img class="imagen-plato-destacado" src="../img/tallarines_verdeo.png" alt="Tallarines al Verdeo con Longaniza">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Tallarines al Verdeo con Longaniza</h3>
                         <p class="descripcion-plato-destacado">Un plato de pasta fresca acompañada con una cremosa salsa de cebolla de verdeo y trozos de sabrosa longaniza, que aporta un toque ahumado y lleno de sabor.</p>
@@ -87,7 +107,7 @@
                 </div>
 
                 <div class="platos-destacados-ventanas">
-                    <img class="imagen-plato-destacado" src="../img/fusiles_brocoli.png" alt="Fusiles con brocolis, anchoas, garbanzos y boletus"/>
+                    <img class="imagen-plato-destacado" src="../img/fusiles_brocoli.png" alt="Fusiles con brocolis, anchoas, garbanzos y boletus">
                     <div class="destacados-texto">
                         <h3 class="nombre-plato-destacado">Fusiles con brocolis, anchoas, garbanzos y boletus</h3>
                         <p class="descripcion-plato-destacado">Combina la textura al dente de la pasta con el frescor del brócoli, el sabor intenso de las anchoas, la suavidad de los garbanzos y el aroma terroso de los boletus.</p>
@@ -250,5 +270,7 @@
             </div>
             <p id="copy"> © 2025 Cantina Chichilo X Liceo La Paz. Todos los derechos reservados.</p>
         </footer>
+
+        <script src="../js/toggleMenu.js"></script>
     </body>
 </html>

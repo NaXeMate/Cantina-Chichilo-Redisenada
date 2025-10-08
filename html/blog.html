@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cantina Chichilo de Buenos Aires - Blog</title>
-        <link rel="stylesheet" href="../css/blog-style.css"/>
+        <link rel="stylesheet" href="../css/blog-style.css">
     </head>
     <body>
         <header>
@@ -17,13 +18,29 @@
                     <li class="menu-flotante-elemento"><a href="#inicio">BLOG</a></li>
                 </ul>
             </nav>
+
+            <div class="menu-flotante-wrap">
+                <div id="burguer-container" onclick="toggleMenu()">
+                    <img id="burguer" src="../img/burguer.png" alt="burguer">
+                </div>
+            </div>
+
+            <nav class="menu-lateral-container">
+                <ul class="menu-lateral">
+                    <li class="menu-lateral-elemento"><a href="index.html#platos-destacados">PLATOS DESTACADOS</a></li>
+                    <li class="menu-lateral-elemento"><a href="index.html#menu-dia">MENÚ DEL DÍA</a></li>
+                    <li class="menu-lateral-elemento"><a href="index.html#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                    <li class="menu-lateral-elemento"><a href="index.html#resenas">RESEÑAS</a></li>
+                    <li class="menu-lateral-elemento"><a href="#contacto">CONTACTO</a></li>
+                    <li class="menu-lateral-elemento"><a href="#inicio">BLOG</a></li>
+                </ul>
+            </nav>
         </header>
 
         <main>
             <h1 id="inicio">Blog de Cantina Chichilo</h1>
             <p id="lema">Bienvenidos al blog de Cantina Chichilo, donde compartimos nuestras recetas, consejos de cocina y novedades del restaurante.</p>
-        </main>
-        <section id="blog">
+
             <article class="parent">
                 <div class="div1">
                     <h2>Pasta Carbonara</h2>
@@ -62,7 +79,7 @@
                     <img src="../img/kmi420.png" alt="Mónica, somos a mellor clase que tes">
                 </div>
             </article>
-        </section>
+        </main>
 
 <hr>
 
@@ -98,5 +115,7 @@
             </div>
             <p id="copy"> © 2025 Cantina Chichilo X Liceo La Paz. Todos los derechos reservados.</p>
         </footer>
+        
+        <script src="../js/toggleMenu.js"></script>
     </body>
 </html>
